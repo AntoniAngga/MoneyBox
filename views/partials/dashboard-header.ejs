@@ -1,0 +1,19 @@
+<nav class="greens">
+   <div class="nav-wrapper">
+     <a href="#" class="brand-logo center">MoneyBox</a>
+     <ul id="nav-mobile" class="left hide-on-med-and-down">
+       <% for (let i=0; i<menus.length; i++) {%>
+         <li><a href="<%= menus[i].link%>"><%= menus[i].menuName%></a></li>
+       <% } %>
+     </ul>
+     <ul class="right hide-on-med-and-down">
+      <li class="active"><a href="/user/logout">Logout</a></li>
+     </ul>
+     <ul class="right hide-on-med-and-down" style="margin-right: 15px;">
+       <div class="chip">
+         <img src="/images/man.png" alt="Contact Person">
+         <%- currentUser.name %>
+       </div>
+     </ul>
+   </div>
+ </nav>
