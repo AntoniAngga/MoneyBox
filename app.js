@@ -31,7 +31,7 @@ app.use(session({
 
 app.use('/', index);
 app.use('/user', users);
-app.use('/transaction', transaction)
+app.use('dashboard/transaction', transaction)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
