@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transaction Data</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>Information</td>
+        <td>Date</td>
+        <td>Category</td>
+        <td>Amount</td>
+      </tr>
+      <% ListTransaction.forEach(function(Transaction) { %>
+            <tr>
+            <td><%= Transaction.id %></td>
+            <td><%= Transaction.keterangan %></td>
+            <td><%= Transaction.tanggal_transaksi %></td>
+            <td><%= Transaction.Category.nama_category %></td>
+            <td><%= Transaction.amount%></td>
+            <a href="/user/dashboard/transaction/editData"><label>Edit</label></a>
+            <a href="/user/dashboard/transaction/deleteData"><label>Delete</label></a>
+            </tr>
+          <% }); %>
+    </table>
+      <a href="/user/dashboard/transaction/addData"><button type="button"> Add Data </button></a>
+  </body>
+</html>
