@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Transaction</title>
+  </head>
+  <body>
+    <h1>Transaction</h1>
+    <form action="/user/dashboard/transaction/addData" method="post">
+      <label for="amount">
+        Amount :
+        <input type="text" name="amount">
+      </label>
+      <br>
+      <label for="keterangan">
+        Information :
+        <input type="text" name="keterangan">
+      </label>
+      <br>
+      <label for="tanggal_transaksi">
+        Date :
+        <input type="date" name="tanggal_transaksi" >
+      </label>
+      <br>
+      <label for="Category">
+        Category :
+        <select name = "CategoryDiPilih">
+          <% Categorys.forEach(function(ListCategory) { %>
+        <option value = '<%=ListCategory.id%>'> <%= ListCategory.nama_category %></option>
+        <% }); %>
+      </select>
+      </label>
+      <br>
+
+      <button type="submit"> Submit </button>
+      <br>
+    </form>
+  </body>
+</html>
