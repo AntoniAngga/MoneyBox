@@ -44,6 +44,9 @@ export default StyleSheet.create({
     "gray": {
         "backgroundColor": "#eee"
     },
+    "absolute-center": {
+        "left": "43%"
+    },
     "*": {
         "boxSizing": "border-box",
         "MozBoxSizing": "border-box",

@@ -33,6 +33,10 @@ a {
   background-color: #eee;
 }
 
+.absolute-center {
+  left: 43%;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Vibur);
 * {
   box-sizing: border-box;
