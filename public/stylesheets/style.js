@@ -7,11 +7,11 @@ const {width, height, scale} = Dimensions.get("window"),
 
 export default StyleSheet.create({
     "body": {
-        "paddingTop": 50,
-        "paddingRight": 50,
-        "paddingBottom": 50,
-        "paddingLeft": 50,
-        "font": "14px \"Lucida Grande\", Helvetica, Arial, sans-serif",
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "fontFamily": "'Open Sans', sans-serif",
         "background": "#0ac986"
     },
     "a": {
@@ -36,6 +36,16 @@ export default StyleSheet.create({
         "paddingBottom": 15,
         "paddingLeft": 15,
         "borderRadius": 5
+    },
+    "greens": {
+        "backgroundColor": "#0ac986",
+        "color": "#fff"
+    },
+    "gray": {
+        "backgroundColor": "#eee"
+    },
+    "absolute-center": {
+        "left": "43%"
     },
     "*": {
         "boxSizing": "border-box",
