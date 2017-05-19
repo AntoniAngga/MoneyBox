@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
         User.hasMany(models.Transaction, {foreignKey:'id_user'})
       }
     }
+
   });
   return User;
 };

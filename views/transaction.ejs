@@ -2,38 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Transaction</title>
+    <title>Transaction Data</title>
   </head>
   <body>
-    <h1>Transaction</h1>
-    <form action="transaction/addData" method="post">
-      <label for="amount">
-        Amount :
-        <input type="text" name="amount">
-      </label>
-      <br>
-      <label for="keterangan">
-        Information :
-        <input type="text" name="keterangan">
-      </label>
-      <br>
-      <label for="tanggal_transaksi">
-        Date :
-        <input type="date" name="tanggal_transaksi" >
-      </label>
-      <br>
-      <label for="Category">
-        Category :
-        <select name = "CategoryDiPilih">
-          <% Categorys.forEach(function(ListCategory) { %>
-        <option value = '<%=ListCategory.id%>'> <%= ListCategory.nama_category %></option>
-        <% }); %>
-      </select>
-      </label>
-      <br>
-
-      <button type="submit"> Submit </button>
-      <br>
-    </form>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>Information</td>
+        <td>Date</td>
+        <td>Category</td>
+        <td>Amount</td>
+      </tr>
+      <% ListTransaction.forEach(function(Transaction) { %>
+            <tr>
+            <td><%= Transaction.id %></td>
+            <td><%= Transaction.keterangan %></td>
+            <td><%= Transaction.tanggal_transaksi %></td>
+            <td><%= Transaction.Category.nama_category %></td>
+            <td><%= Transaction.amount%></td>
+            <a href="/user/dashboard/transaction/editData">Edit</a>
+            <a href="/user/dashboard/transaction/deleteData">Delete</a>
+            </tr>
+          <% }); %>
+    </table>
+      <a href="/user/dashboard/transaction/addData"><button type="button"> Add Data </button></a>
   </body>
 </html>
