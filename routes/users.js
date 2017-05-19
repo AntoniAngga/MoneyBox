@@ -3,7 +3,6 @@ var router = express.Router();
 const db = require('../models');
 const util = require('../helpers/menuBar.js');
 
-
 router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
@@ -36,7 +35,15 @@ router.get('/dashboard', function(req, res) {
   let currentUser = req.session.user
   if(req.session.user){
     let menus = util.menuBar(currentUser.role)
-    res.render('dashboard', {currentUser: currentUser, menus: menus})
+    db.Transaction.findAll({
+      include: [{ model: db.Category }]
+    })
+    .then((transaction) => {
+        res.render('dashboard', {currentUser: currentUser, helper:util, menus: menus, ListTransaction : transaction})
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   } else {
     res.redirect('/')
   }

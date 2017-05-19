@@ -33,6 +33,18 @@ a {
   background-color: #eee;
 }
 
+.btn-add {
+  position: absolute;
+  left: -28px;
+  top: 130px;
+}
+
+.left-card {
+  padding: 20px;
+  background-color: #ff7058;
+  color: white;
+}
+
 .absolute-center {
   left: 43%;
 }

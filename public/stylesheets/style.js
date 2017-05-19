@@ -44,6 +44,19 @@ export default StyleSheet.create({
     "gray": {
         "backgroundColor": "#eee"
     },
+    "btn-add": {
+        "position": "absolute",
+        "left": -28,
+        "top": 130
+    },
+    "left-card": {
+        "paddingTop": 20,
+        "paddingRight": 20,
+        "paddingBottom": 20,
+        "paddingLeft": 20,
+        "backgroundColor": "#ff7058",
+        "color": "white"
+    },
     "absolute-center": {
         "left": "43%"
     },

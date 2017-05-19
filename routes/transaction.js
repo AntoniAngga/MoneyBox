@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 const db = require('../models');
+const util = require('../helpers/menuBar.js');
 
 router.get('/',function(req,res){
   //index untuk Transaction nya
@@ -21,7 +22,8 @@ router.get('/addData', function(req,res){
   let currentUser = req.session.user;
   db.Category.findAll()
   .then(Category => {
-    res.render('AddTransaction', {Categorys:Category});
+    let menus = util.menuBar(currentUser.role)
+    res.render('transactionAdd', {currentUser: currentUser, Categorys:Category, menus: menus});
   })
   .catch((err) => {
     console.log(err);
@@ -43,7 +45,7 @@ router.post('/addData', function(req,res){
        'id_user' : currentUser.id
      })
      .then(()=>{
-       res.redirect('/');
+       res.redirect('/user/dashboard');
     })
     .catch((err) => {
       console.log(err);
